@@ -6,7 +6,7 @@
 <title> Welcome  to devops class conducted by micro-degree   </title>
 <style>
   body {
-    background-color: yellow;
+    background-color: blue;
   }
 </style>
 </head>

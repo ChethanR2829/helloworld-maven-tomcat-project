@@ -6,12 +6,12 @@
 <title> Welcome  to devops class conducted by micro-degree   </title>
 <style>
   body {
-    background-color: red;
+    background-color: white;
   }
 </style>
 </head>
 <body>
-<h1>Welcome  to devops class, This class is conducted by Vinod Sir </h1>
+<h1>Welcome  to devops class, This class is conducted by Vinod Sir from microdegree </h1>
 <p>Welcome  to devops.</p>
 </body>
 </html>

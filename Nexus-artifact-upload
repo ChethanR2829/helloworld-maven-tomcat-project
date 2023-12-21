@@ -1,0 +1,24 @@
+pipeline {
+    agent { label "slave_2" }
+    
+    stages {
+        stage('clone_project_A') {
+            steps {
+                echo 'clone project A'
+                git 'https://github.com/vincloud2/Helloworld-latest.git'
+            }
+        }
+        stage('build_project_A') {
+            steps {
+                echo 'build_projectA'
+                sh 'yum install maven -y'
+                sh 'mvn clean package'
+            }
+        } 
+        stage('upload  to Nexus') {
+            steps {
+            nexusArtifactUploader artifacts: [[artifactId: 'helloworld', classifier: '', file: '/var/jenkins/workspace/nexus_upload_latest_pipline_maven _build/target/helloworld-1.5-SNAPSHOT.war', type: 'war']], credentialsId: 'nex-ad', groupId: 'com.example', nexusUrl: '18.141.145.220:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'project_maven', version: '1.5-SNAPSHOT'
+        }
+    }
+  }
+}
